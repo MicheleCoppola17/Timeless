@@ -16,6 +16,11 @@
 			path = Timeless;
 			sourceTree = "<group>";
 		};
+		A503E4972D0E5C2A00EBA162 /* Model */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +39,7 @@
 			children = (
 				A503E4722D0E484800EBA162 /* Timeless */,
 				A503E4712D0E484800EBA162 /* Products */,
+				A503E4972D0E5C2A00EBA162 /* Model */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +68,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				A503E4722D0E484800EBA162 /* Timeless */,
+				A503E4972D0E5C2A00EBA162 /* Model */,
 			);
 			name = Timeless;
 			packageProductDependencies = (
