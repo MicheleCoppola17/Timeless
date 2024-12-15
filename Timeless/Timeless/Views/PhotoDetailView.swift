@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct PhotoDetailView: View {
+    let photo: Photo
+    
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    PhotoDetailView()
+    PhotoDetailView(photo: .example)
 }
