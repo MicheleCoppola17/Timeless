@@ -13,17 +13,33 @@ struct ContentView: View {
     
     var randomIndexStart = Int.random(in: 0..<50)
     
+    @State private var showSheet: Bool = true
+    
     @State private var photos = [Photo]()
     @State private var searchedCity: String = ""
     
+    @State private var position: MapCameraPosition = .automatic
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Map(position: $position) {
+            if searchedCity.isEmpty == false {
+                
+            }
         }
-        .padding()
+        .task {
+            photos = await loadData() ?? []
+        }
+        .onChange(of: searchedCity) {
+            Task {
+                await loadData()
+            }
+        }
+        .sheet(isPresented: $showSheet) {
+            PhotoCollectionView()
+                .presentationDetents([.fraction(0.1), .medium, .large])
+                .presentationBackgroundInteraction(.enabled)
+                .interactiveDismissDisabled()
+        }
     }
     
     func loadData() async -> [Photo]? {
