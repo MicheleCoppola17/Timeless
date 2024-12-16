@@ -37,7 +37,7 @@ struct PhotoCollectionView: View {
                                         ProgressView()
                                     }
                                     
-                                    Text(photo.title?.first ?? "Untitled")
+                                    Text((photo.dcTitleLangAware.en?.first ?? photo.title?.first) ?? "Untitled")
                                         .font(.headline)
                                         .foregroundStyle(.white)
                                         .padding(.vertical)

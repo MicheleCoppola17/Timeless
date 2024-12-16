@@ -13,7 +13,11 @@ struct PhotoDetailView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack {
+                VStack(alignment: .leading) {
+                    Text((photo.dcTitleLangAware.en?.first ?? photo.title?.first) ?? "Untitled")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        
                     AsyncImage(url: URL(string: photo.edmPreview[0]), scale: 3) { image in
                         image
                             .resizable()
@@ -38,7 +42,6 @@ struct PhotoDetailView: View {
                         Text((photo.dcDescriptionLangAware?.en?.first ?? photo.dcDescription?.first) ?? "No Description")
                     }
                 }
-                .navigationTitle((photo.dcTitleLangAware.en?.first ?? photo.title?.first) ?? "Untitled")
                 .padding()
             }
         }

@@ -5,7 +5,7 @@
 //  Created by Michele Coppola on 15/12/24.
 //
 
-//The API does not provide useful coordinates for each photo or, if provided, they are not always related to the city the photo was taken. So, for now, I gave each photo the coordinates of the searched city, but with a random little offset.
+// The API does not provide useful coordinates for each photo or, if provided, they are not always related to the city the photo was taken. So, for now, I gave each photo the coordinates of the searched city, but with a random little offset.
 
 import MapKit
 import SwiftUI
@@ -59,9 +59,9 @@ struct ContentView: View {
         }
     }
     
-    //The search is filtered in order to get results from just one provider (in this case the European Library of information and Culture). Doing that I have a more consistent result.
+    // The search is filtered in order to get results from just one provider (in this case the European Library of information and Culture). Doing that I have a more consistent result.
     
-    //With that search filters, the API is able to provide many photos of mostly all the main italian cities.
+    // With those search filters, the API is able to provide many photos of mostly all the main italian cities.
     
     func loadData() async -> [Photo]? {
         guard let url = URL(string: "https://api.europeana.eu/record/v2/search.json?query=\(searchedCity)+AND+European Library of Information and Culture&rows=12&start=\(String(randomIndexStart))&media=true&reusability=open&qf=TYPE:IMAGE&wskey=\(apiKey)") else {
