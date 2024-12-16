@@ -12,34 +12,35 @@ struct PhotoDetailView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                AsyncImage(url: URL(string: photo.edmPreview[0]), scale: 3) { image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                } placeholder: {
-                    ProgressView()
-                }
-                .frame(height: 350)
-                
-                HStack {
-                    Text(photo.dcCreator?.first ?? "Unknown Author")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .padding(10)
-                        .foregroundStyle(.white)
-                        .background(.gray)
-                        .clipShape(.capsule)
+            ScrollView {
+                VStack {
+                    AsyncImage(url: URL(string: photo.edmPreview[0]), scale: 3) { image in
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    } placeholder: {
+                        ProgressView()
+                    }
                     
-                    Text(photo.edmTimespanLabelLangAware?.zxx?.first ?? "Unknown Date")
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text(photo.dcCreator?.first ?? "Unknown Author")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .padding(10)
+                                .foregroundStyle(.white)
+                                .background(.gray.opacity(0.75))
+                                .clipShape(.capsule)
+                            
+                            Text(photo.edmTimespanLabelLangAware?.zxx?.first ?? "Unknown Date")
+                        }
+                        
+                        Text((photo.dcDescriptionLangAware?.en?.first ?? photo.dcDescription?.first) ?? "No Description")
+                    }
                 }
-                
-                Text((photo.dcDescriptionLangAware?.en?.first ?? photo.dcDescription?.first) ?? "No Description")
-                    .padding()
-                
-                Spacer()
+                .navigationTitle((photo.dcTitleLangAware.en?.first ?? photo.title?.first) ?? "Untitled")
+                .padding()
             }
-            .navigationTitle((photo.dcTitleLangAware.en?.first ?? photo.title?.first) ?? "Untitled")
         }
     }
 }

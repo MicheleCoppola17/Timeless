@@ -27,7 +27,10 @@ struct ContentView: View {
         Map(position: $position) {
             if searchedCity.isEmpty == false {
                 ForEach(photos) { photo in
-                    Annotation(LocalizedStringKey(""), coordinate: CLLocationCoordinate2D(latitude: photoCoordinates.latitude + Double.random(in: -0.01...0.01), longitude: photoCoordinates.longitude + Double.random(in: -0.01...0.01))) {
+                    Annotation(LocalizedStringKey(""), coordinate: CLLocationCoordinate2D(
+                        latitude: photoCoordinates.latitude + Double.random(in: -0.01...0.01),
+                        longitude: photoCoordinates.longitude + Double.random(in: -0.01...0.01))
+                    ) {
                         AsyncImage(url: URL(string: photo.edmPreview[0])) { image in
                             image
                                 .resizable()
