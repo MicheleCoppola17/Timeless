@@ -58,7 +58,7 @@ struct PhotoCollectionView: View {
                     }
                 }
                 .padding([.horizontal, .bottom])
-                .searchable(text: $searchedCity)
+                .searchable(text: $searchedCity, prompt: Text("Search a city"))
                 .onSubmit(of: .search) {
                     Task {
                         if let mapItem = await searchCity(for: searchedCity) {
