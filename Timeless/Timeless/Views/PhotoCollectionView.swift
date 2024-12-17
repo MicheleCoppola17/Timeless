@@ -40,10 +40,16 @@ struct PhotoCollectionView: View {
                                     Text((photo.dcTitleLangAware.en?.first ?? photo.title?.first) ?? "Untitled")
                                         .font(.headline)
                                         .foregroundStyle(.white)
-                                        .padding(.vertical)
-                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .frame(width: 175, height: 50)
                                         .background(Color(red: 0.2, green: 0.2, blue: 0.3))
                                 }
+                                .frame(width: 175, height: 175)
+                                .clipShape(.rect(cornerRadius: 10))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(.gray)
+                                )
                             }
                         }
                     }
