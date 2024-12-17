@@ -28,29 +28,32 @@ struct PhotoCollectionView: View {
                             NavigationLink {
                                 PhotoDetailView(photo: photo)
                             } label: {
-                                VStack {
-                                    AsyncImage(url: URL(string: photo.edmPreview[0]), scale: 3) { image in
-                                        image
-                                            .resizable()
-                                            .scaledToFit()
-                                    } placeholder: {
-                                        ProgressView()
-                                    }
-                                    
-                                    Text((photo.dcTitleLangAware.en?.first ?? photo.title?.first) ?? "Untitled")
-                                        .font(.headline)
-                                        .foregroundStyle(.white)
-                                        .padding()
-                                        .frame(width: 175, height: 50)
-                                        .background(Color(red: 0.2, green: 0.2, blue: 0.3))
+                                AsyncImage(url: URL(string: photo.edmPreview[0]), scale: 3) { image in
+                                    image
+                                        .resizable()
+                                        .scaledToFill()
+                                        .clipped()
+                                } placeholder: {
+                                    ProgressView()
                                 }
-                                .frame(width: 175, height: 175)
+                                .frame(width: 175, height: 175, alignment: .bottom)
+                                .overlay(alignment: .bottom) {
+                                    ZStack(alignment: .bottom) {
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(.gray)
+                                            .frame(width: 175, height: 175)
+                                        
+                                        Text((photo.dcTitleLangAware.en?.first ?? photo.title?.first) ?? "Untitled")
+                                            .font(.headline)
+                                            .foregroundStyle(.white)
+                                            .padding()
+                                            .frame(width: 175, height: 50)
+                                            .background(.black.opacity(0.75))
+                                    }
+                                }
                                 .clipShape(.rect(cornerRadius: 10))
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(.gray)
-                                )
                             }
+                            .shadow(radius: 5)
                         }
                     }
                 }

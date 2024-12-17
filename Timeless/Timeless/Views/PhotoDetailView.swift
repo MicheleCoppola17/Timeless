@@ -31,9 +31,9 @@ struct PhotoDetailView: View {
                             Text(photo.dcCreator?.first ?? "Unknown Author")
                                 .font(.headline)
                                 .fontWeight(.bold)
-                                .padding(10)
-                                .foregroundStyle(.white)
-                                .background(.gray.opacity(0.75))
+                                .padding(8)
+                                .foregroundStyle(.black)
+                                .background(.gray.opacity(0.25))
                                 .clipShape(.capsule)
                             
                             Text(photo.edmTimespanLabelLangAware?.zxx?.first ?? "Unknown Date")

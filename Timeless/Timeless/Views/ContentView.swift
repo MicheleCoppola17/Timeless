@@ -36,6 +36,7 @@ struct ContentView: View {
                                 .resizable()
                                 .frame(width: 40, height: 40)
                                 .clipShape(Circle())
+                                .accessibilityLabel(Text((photo.dcTitleLangAware.en?.first ?? photo.title?.first) ?? "Untitled"), isEnabled: true)
                         } placeholder: {
                             ProgressView()
                         }
