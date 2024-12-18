@@ -17,5 +17,6 @@ Timeless is an iOS app that allows users to explore the past through old photogr
 ## License
 This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for details.
 
+## 📱 App Screenshots
 <img src="TimelessScreenshot1.PNG" alt="screenshot" width="30%"> <img src="TimelessScreenshot2.PNG" alt="screenshot" width="30%"> <img src="TimelessScreenshot3.PNG" alt="screenshot" width="30%">
 
