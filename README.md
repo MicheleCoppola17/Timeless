@@ -3,10 +3,6 @@ An iOS app for discover the vintage look of cities.
 
 Timeless is an iOS app that allows users to explore the past through old photographs of cities. By searching for a city, users can zoom into its map and discover vintage images that capture its timeless essence. The app treats photography as a true form of art, offering a unique journey through time and place.
 
-![App Screenshot](TimelessScreenshot1.PNG)
-![App Screenshot](TimelessScreenshot2.PNG)
-![App Screenshot](TimelessScreenshot3.PNG)
-
 ## 🚀 Features
 - Search for a city
 - Discover old photos
@@ -20,3 +16,7 @@ Timeless is an iOS app that allows users to explore the past through old photogr
 
 ## License
 This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for details.
+
+![App Screenshot](TimelessScreenshot1.PNG)
+![App Screenshot](TimelessScreenshot2.PNG)
+![App Screenshot](TimelessScreenshot3.PNG)
