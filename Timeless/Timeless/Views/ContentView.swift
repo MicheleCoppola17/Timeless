@@ -11,7 +11,6 @@ import MapKit
 import SwiftUI
 
 struct ContentView: View {
-    let apiKey = "ageingorepie"
     
     var randomIndexStart = Int.random(in: 0..<50)
     
